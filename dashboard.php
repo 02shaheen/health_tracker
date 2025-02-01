@@ -141,7 +141,7 @@
         </div>
 
         <div class="banner-container">
-            <img src="WhatsApp Image 2025-01-29 at 4.11.13 PM.jpeg" class="banner-image" alt="Health Dashboard Banner">
+            <img src="assets/1.jpeg" class="banner-image" alt="Health Dashboard Banner">
             <div class="banner-overlay"></div>
         </div>
 
