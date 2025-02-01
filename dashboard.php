@@ -139,8 +139,7 @@
             <p>Monitor and track your health metrics over time</p>
             <a href="login-page-url" class="login-button">Login</a>
         </div>
-        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos mollitia repellat error facere. Ullam earum consequuntur eligendi ea laborum, qui laudantium maiores numquam iste illo neque nam id consectetur.</p></div>
-
+        
         <div class="banner-container">
             <img src="assets/1.jpeg" class="banner-image" alt="Health Dashboard Banner">
             <div class="banner-overlay"></div>
