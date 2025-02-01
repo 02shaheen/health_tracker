@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: #f8fafc;
+            background:rgb(244, 247, 250)!important;
             color: #1e293b;
         }
 
@@ -32,25 +33,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
         }
 
         .tagline {
             text-align: center;
-            padding: 40px 20px;
-            background: white;
+            padding: 0;
+            background:rgb(244, 247, 250);
             border-bottom: 1px solid #e5e7eb;
+            height: 80px;
         }
 
         .tagline h2 {
             color: #ff4e00;
             font-size: 32px;
             margin-bottom: 10px;
-        }
-
-        .tagline p {
-            color: rgb(1, 1, 1);
-            font-size: 18px;
+            
         }
 
         .upload-records {
@@ -59,7 +57,7 @@
             padding: 30px;
             background: white;
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .upload-records h2 {
@@ -100,7 +98,7 @@
         form select:focus {
             outline: none;
             border-color: rgb(43, 44, 45);
-            box-shadow: 0 0 0 4px rgba(59,130,246,0.1);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
 
         button[type="submit"] {
@@ -152,51 +150,56 @@
                 font-size: 24px;
             }
         }
+
+        .Mainbody {
+            margin-left: 250px;
+        
+        }
     </style>
 </head>
 
 <body>
-    <?php include "header.php"; ?>
+    <?php include "sidebar.php"; ?>
+    <div class="Mainbody">
+        <div class="tagline">
+            <h2>Medical Records Upload</h2>
+            <p>Securely store and manage your medical documents</p>
+        </div>
+        <div class="banner-container">
+            <img src="WhatsApp Image 2025-01-29 at 4.11.13 PM (3).jpeg" class="banner-image" alt="Medical Records Banner">
+            <div class="banner-overlay"></div>
+        </div>
 
-    <div class="banner-container">
-        <img src="img/Untitled design - Copy (2).png" class="banner-image" alt="Medical Records Banner">
-        <div class="banner-overlay"></div>
+        <section class="upload-records">
+            <h2>Upload Your Records</h2>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file-type">Record Type:</label>
+                    <select id="file-type" name="file_type" required>
+                        <option value="">Select record type</option>
+                        <option value="prescription">Prescription</option>
+                        <option value="report">Medical Report</option>
+                        <option value="lab">Laboratory Results</option>
+                        <option value="imaging">Imaging Results</option>
+                        <option value="other">Other Documents</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="file-name">Select File:</label>
+                    <input type="file" id="file-name" name="file_name" accept=".pdf,.jpg,.png,.docx" required>
+                    <small style="color: #64748b; margin-top: 5px; display: block;">Accepted formats: PDF, JPG, PNG, DOCX</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Record Date:</label>
+                    <input type="date" id="date" name="upload_date" required>
+                </div>
+
+                <button type="submit" name="submit" value="submit">Upload Record</button>
+            </form>
+        </section>
     </div>
-
-    <div class="tagline">
-        <h2>Medical Records Upload</h2>
-        <p>Securely store and manage your medical documents</p>
-    </div>
-
-    <section class="upload-records">
-        <h2>Upload Your Records</h2>
-        <form action="#" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="file-type">Record Type:</label>
-                <select id="file-type" name="file_type" required>
-                    <option value="">Select record type</option>
-                    <option value="prescription">Prescription</option>
-                    <option value="report">Medical Report</option>
-                    <option value="lab">Laboratory Results</option>
-                    <option value="imaging">Imaging Results</option>
-                    <option value="other">Other Documents</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="file-name">Select File:</label>
-                <input type="file" id="file-name" name="file_name" accept=".pdf,.jpg,.png,.docx" required>
-                <small style="color: #64748b; margin-top: 5px; display: block;">Accepted formats: PDF, JPG, PNG, DOCX</small>
-            </div>
-
-            <div class="form-group">
-                <label for="date">Record Date:</label>
-                <input type="date" id="date" name="upload_date" required>
-            </div>
-
-            <button type="submit" name="submit" value="submit">Upload Record</button>
-        </form>
-    </section>
 
     <?php
     if (isset($_POST['submit'])) {
@@ -234,4 +237,5 @@
     <?php include "footer.php"; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
